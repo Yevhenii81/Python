@@ -1,0 +1,7 @@
+<body id="day-body">
+    <h1>{{ day }}</h1>
+    <p>Сьогоднішній день тижня</p>
+    <script>
+        document.getElementById('day-body').style.backgroundColor = "{{ bg_color|default:'#ffffff' }}";
+    </script>
+</body>
