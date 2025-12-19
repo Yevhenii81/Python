@@ -94,5 +94,5 @@ def headphones(request):
     }
 
     return render(request, 'hw_16_12/headphones.html', {
-        'info': data.get(model, 'Модель не знайдена')
+        'info': data.get(model, 'Модель не найдено')
     })
