@@ -1,0 +1,12 @@
+{% extends 'hw_18_12/base.html' %}
+
+{% block content %}
+<h2>{{ book.title }}</h2>
+
+<p><b>Автор:</b> {{ book.author }}</p>
+<p><b>Рік видання:</b> {{ book.year }}</p>
+<p><b>Стиль:</b> {{ book.genre }}</p>
+<p><b>Видавництво:</b> {{ book.publisher }}</p>
+
+<a href="/library/books/">← Назад до списку</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'hw_18_12/base.html' %}
+
+{% block content %}
+<h2>📚 Список книжок</h2>
+
+<ul>
+    {% for book in books %}
+        <li>
+            <a href="/library/books/{{ book.id }}/">
+                {{ book.title }} — {{ book.author }}
+            </a>
+        </li>
+    {% empty %}
+        <li>Книжок немає</li>
+    {% endfor %}
+</ul>
+{% endblock %}

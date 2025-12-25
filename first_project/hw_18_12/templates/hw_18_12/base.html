@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Бібліотека</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; background: #f7f7f7; }
+        nav { background: #222; padding: 10px; }
+        nav a { color: white; margin-right: 15px; text-decoration: none; }
+        .box { background: white; padding: 20px; margin-top: 20px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/library/">Головна</a>
+    <a href="/library/books/">Книги</a>
+    <a href="/library/readers/">Читачі</a>
+</nav>
+
+<div class="box">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

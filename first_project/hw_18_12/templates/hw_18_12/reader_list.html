@@ -1,0 +1,17 @@
+{% extends 'hw_18_12/base.html' %}
+
+{% block content %}
+<h2>👤 Читачі</h2>
+
+<ul>
+    {% for reader in readers %}
+        <li>
+            <a href="/library/readers/{{ reader.id }}/">
+                {{ reader.first_name }} {{ reader.last_name }}
+            </a>
+        </li>
+    {% empty %}
+        <li>Читачів немає</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'hw_18_12/base.html' %}
+
+{% block content %}
+<h2>{{ reader.first_name }} {{ reader.last_name }}</h2>
+
+<p><b>Телефон:</b> {{ reader.phone }}</p>
+<p><b>Email:</b> {{ reader.email }}</p>
+<p><b>Дата реєстрації:</b> {{ reader.registered_at }}</p>
+
+<a href="/library/readers/">← Назад до списку</a>
+{% endblock %}
