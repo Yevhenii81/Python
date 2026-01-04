@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="year" placeholder="Введіть рік">
+    <button>Показати</button>
+</form>
+
+{% if result %}
+<p>День програміста: {{ result }}</p>
+{% endif %}

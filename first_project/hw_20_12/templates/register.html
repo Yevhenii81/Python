@@ -1,0 +1,25 @@
+<form method="post">
+    {% csrf_token %}
+    <input name="name" placeholder="Ім'я">
+    <input name="surname" placeholder="Прізвище">
+    <input type="number" name="age" placeholder="Вік">
+    <input name="email" placeholder="Email">
+    <input name="gender" placeholder="Стать">
+    <input name="address" placeholder="Адреса">
+    <br>
+    <label>
+        <input type="checkbox" name="news">
+        Бажаєте підписатися на новини нашого інтернет-магазину?
+    </label>
+    <br>
+    <button>Зареєструватися</button>
+</form>
+
+{% if data %}
+<h3>Дані користувача</h3>
+<ul>
+    {% for key, value in data.items %}
+    <li><b>{{ key }}:</b> {{ value }}</li>
+    {% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,14 @@
+<form method="post">
+    {% csrf_token %}
+    <input name="numbers" placeholder="Напр: 1 2 3">
+    <br>
+    <label><input type="radio" name="action" value="min"> Мінімум</label>
+    <label><input type="radio" name="action" value="max"> Максимум</label>
+    <label><input type="radio" name="action" value="avg"> Середнє</label>
+    <br>
+    <button>Обчислити</button>
+</form>
+
+{% if result %}
+<p>Результат: {{ result }}</p>
+{% endif %}

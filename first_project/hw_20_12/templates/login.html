@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    <input name="login" placeholder="Логін">
+    <input type="password" name="password" placeholder="Пароль">
+    <button>Увійти</button>
+</form>
+
+<p>{{ message }}</p>
