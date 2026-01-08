@@ -3,12 +3,22 @@
 {% block content %}
 <h2>👤 Читачі</h2>
 
+<a href="{% url 'reader_create' %}">➕ Додати читача</a>
+
 <ul>
     {% for reader in readers %}
         <li>
-            <a href="/library/readers/{{ reader.id }}/">
+            <a href="{% url 'reader_detail' reader.id %}">
                 {{ reader.first_name }} {{ reader.last_name }}
             </a>
+
+            <!-- Кнопки для редагування і видалення -->
+            {% if perms.library.change_reader %}
+                <a href="{% url 'reader_update' reader.id %}">✏️ Редагувати</a>
+            {% endif %}
+            {% if perms.library.delete_reader %}
+                <a href="{% url 'reader_delete' reader.id %}">🗑 Видалити</a>
+            {% endif %}
         </li>
     {% empty %}
         <li>Читачів немає</li>
