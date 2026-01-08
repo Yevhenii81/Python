@@ -1,0 +1,14 @@
+{% extends 'hw_18_12/base.html' %}
+
+{% block content %}
+<h2>Ви впевнені, що хочете видалити?</h2>
+
+<p>{{ object }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Так, видалити</button>
+</form>
+
+<a href="javascript:history.back()">Скасувати</a>
+{% endblock %}

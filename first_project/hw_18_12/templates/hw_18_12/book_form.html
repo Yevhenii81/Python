@@ -1,0 +1,13 @@
+{% extends 'hw_18_12/base.html' %}
+
+{% block content %}
+<h2>Форма</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Зберегти</button>
+</form>
+
+<a href="javascript:history.back()">← Назад</a>
+{% endblock %}
