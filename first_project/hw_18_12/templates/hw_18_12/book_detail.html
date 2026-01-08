@@ -5,8 +5,8 @@
 
 <p><b>Автор:</b> {{ book.author }}</p>
 <p><b>Рік видання:</b> {{ book.year }}</p>
-<p><b>Стиль:</b> {{ book.genre }}</p>
+<p><b>Стиль:</b> {{ book.style }}</p>
 <p><b>Видавництво:</b> {{ book.publisher }}</p>
 
-<a href="/library/books/">← Назад до списку</a>
+<a href="{% url 'book_list' %}">← Назад до списку</a>
 {% endblock %}
