@@ -1,0 +1,18 @@
+{% extends "restaurants/base.html" %}
+
+{% block title %}{{ restaurant.name }}{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">{{ restaurant.name }}</h2>
+
+<ul class="list-group mb-3">
+    <li class="list-group-item"><b>Спеціалізація:</b> {{ restaurant.specialty }}</li>
+    <li class="list-group-item"><b>Адреса:</b> {{ restaurant.address }}</li>
+    <li class="list-group-item"><b>Вебсайт:</b> <a href="{{ restaurant.website }}" target="_blank">{{ restaurant.website }}</a></li>
+    <li class="list-group-item"><b>Телефон:</b> {{ restaurant.phone }}</li>
+</ul>
+
+<a class="btn btn-warning" href="{% url 'restaurant_update' restaurant.id %}">Редагувати</a>
+<a class="btn btn-danger" href="{% url 'restaurant_delete' restaurant.id %}">Видалити</a>
+<a class="btn btn-secondary" href="{% url 'restaurant_list' %}">← Назад до списку</a>
+{% endblock %}

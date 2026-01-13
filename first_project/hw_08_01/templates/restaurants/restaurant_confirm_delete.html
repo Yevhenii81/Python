@@ -1,0 +1,13 @@
+{% extends "restaurants/base.html" %}
+
+{% block title %}Видалити ресторан{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">Видалити ресторан "{{ restaurant.name }}"?</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Так, видалити</button>
+    <a class="btn btn-secondary" href="{% url 'restaurant_list' %}">Скасувати</a>
+</form>
+{% endblock %}
