@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'hw_16_12', 
     'hw_18_12', 
     'hw_20_12',
+    'hw_08_01',
 ]
 
 
@@ -61,8 +62,8 @@ ROOT_URLCONF = 'first_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [],  
+        'APP_DIRS': True,  
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -72,6 +73,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'first_project.wsgi.application'
 
