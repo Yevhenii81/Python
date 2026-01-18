@@ -7,5 +7,18 @@
 <p><b>Email:</b> {{ reader.email }}</p>
 <p><b>Дата реєстрації:</b> {{ reader.register_date }}</p>
 
+<h3>Книги, які взяв читач:</h3>
+{% if reader.books.all %}
+    <ul>
+        {% for book in reader.books.all %}
+            <li>
+                <a href="{% url 'book_detail' book.id %}">{{ book.title }} — {{ book.author }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Читач не взяв жодної книги.</p>
+{% endif %}
+
 <a href="{% url 'reader_list' %}">← Назад до списку</a>
 {% endblock %}
