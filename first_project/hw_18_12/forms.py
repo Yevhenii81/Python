@@ -1,7 +1,6 @@
 from django import forms
 from .models import Book, Reader
 
-
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
@@ -16,6 +15,12 @@ class BookForm(forms.ModelForm):
 
 
 class ReaderForm(forms.ModelForm):
+    books = forms.ModelMultipleChoiceField(
+        queryset=Book.objects.all(),
+        required=False,
+        widget=forms.CheckboxSelectMultiple
+    )
+
     class Meta:
         model = Reader
         fields = [
@@ -23,5 +28,7 @@ class ReaderForm(forms.ModelForm):
             'last_name',
             'phone',
             'email',
-            'register_date'
+            'register_date',
+            'books'
         ]
+
