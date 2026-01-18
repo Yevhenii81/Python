@@ -3,7 +3,9 @@
 {% block content %}
 <h2>📚 Список книжок</h2>
 
-<a href="{% url 'book_create' %}">➕ Додати книгу</a>
+{% if perms.hw_18_12.add_book %}
+    <a href="{% url 'book_create' %}">➕ Додати книгу</a>
+{% endif %}
 
 <ul>
     {% for book in books %}
@@ -13,10 +15,10 @@
             </a>
 
             <!-- Кнопки для редагування і видалення -->
-            {% if perms.library.change_book %}
+            {% if perms.hw_18_12.change_book %}
                 <a href="{% url 'book_update' book.id %}">✏️ Редагувати</a>
             {% endif %}
-            {% if perms.library.delete_book %}
+            {% if perms.hw_18_12.delete_book %}
                 <a href="{% url 'book_delete' book.id %}">🗑 Видалити</a>
             {% endif %}
         </li>
