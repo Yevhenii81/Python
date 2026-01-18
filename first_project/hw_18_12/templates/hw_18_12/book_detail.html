@@ -8,5 +8,23 @@
 <p><b>Стиль:</b> {{ book.style }}</p>
 <p><b>Видавництво:</b> {{ book.publisher }}</p>
 
+<p>
+    <b>Наявність:</b>
+    {% if book.is_available %}
+        ✅ У бібліотеці
+    {% else %}
+        ❌ У читача
+    {% endif %}
+</p>
+
+<h3>📖 Книгу взяли:</h3>
+<ul>
+    {% for reader in book.readers.all %}
+        <li>{{ reader.first_name }} {{ reader.last_name }}</li>
+    {% empty %}
+        <li>Ніхто не взяв</li>
+    {% endfor %}
+</ul>
+
 <a href="{% url 'book_list' %}">← Назад до списку</a>
 {% endblock %}
