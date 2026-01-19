@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'hw_18_12', 
     'hw_20_12',
     'hw_08_01',
+    'hw_13_01',
+    'rest_framework',
 ]
 
 
